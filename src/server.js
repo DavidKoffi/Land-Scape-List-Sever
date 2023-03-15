@@ -11,6 +11,8 @@ const port = 3000;
 const { SendEmail } = require("./emailService.js");
 const { json } = require("express");
 
+const certificate = fs.readFileSync("./A9D236016B3303B761D3E70A385DB4BD.txt");
+
 const httpsSever = https.createServer(
   // Provide the private and public key to the server by reading each
   // file's content with the readFileSync() method.
@@ -61,6 +63,14 @@ const upload = multer({
 app.get("/ping", (req, res) => {
   res.status(200).json({ message: "Connected" });
 });
+app.get(
+  "/.well-known/pki-validation/A9D236016B3303B761D3E70A385DB4BD.txt",
+  (req, res) => {
+    res.sendFile(
+      "/home/ec2-user/Landscape-List/Land-Scape-List-Sever/A9D236016B3303B761D3E70A385DB4BD.txt"
+    );
+  }
+);
 
 app.post(
   "/",
