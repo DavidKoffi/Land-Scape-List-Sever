@@ -30,13 +30,9 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(
-  port,
-  () => {
-    console.log(`Example app listening on port ${port}`);
-  },
-  "0.0.0.0"
-);
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Example app listening on port ${port}`);
+});
 
 // http
 //   .createServer((req, res) => {
