@@ -16,8 +16,8 @@ const httpsSever = https.createServer(
   // Provide the private and public key to the server by reading each
   // file's content with the readFileSync() method.
   {
-    key: fs.readFileSync("key.pem"),
-    cert: fs.readFileSync("cert.pem"),
+    key: fs.readFileSync("private.key"),
+    cert: fs.readFileSync("certificate.crt"),
   },
   app
 );
@@ -32,6 +32,7 @@ app.use(cors());
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+httpsSever.listen(8843);
 
 // http
 //   .createServer((req, res) => {
