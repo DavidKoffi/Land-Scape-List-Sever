@@ -39,7 +39,7 @@ http
     res.writeHead(200, { "Content-Type": "application/json" });
     res.write(JSON.stringify({ ping: "Success" }));
   })
-  .listen(port);
+  .listen(port, "0.0.0.0");
 console.log(`Example app listening on port ${port}`);
 
 // app.get("/", (req, res) => {
