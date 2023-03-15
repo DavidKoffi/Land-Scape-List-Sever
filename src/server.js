@@ -30,17 +30,21 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
-// });
+app.listen(
+  port,
+  () => {
+    console.log(`Example app listening on port ${port}`);
+  },
+  "0.0.0.0"
+);
 
-http
-  .createServer((req, res) => {
-    res.writeHead(200, { "Content-Type": "application/json" });
-    res.write(JSON.stringify({ ping: "Success" }));
-  })
-  .listen(port, "0.0.0.0");
-console.log(`Example app listening on port ${port}`);
+// http
+//   .createServer((req, res) => {
+//     res.writeHead(200, { "Content-Type": "application/json" });
+//     res.write(JSON.stringify({ ping: "Success" }));
+//   })
+//   .listen(port, "0.0.0.0");
+// console.log(`Example app listening on port ${port}`);
 
 // app.get("/", (req, res) => {
 //   res.send(
