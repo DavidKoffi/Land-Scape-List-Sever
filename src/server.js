@@ -7,7 +7,7 @@ const multer = require("multer");
 const cors = require("cors");
 
 const app = express();
-const port = 3000;
+const port = 80;
 const { SendEmail } = require("./emailService.js");
 const { json } = require("express");
 
