@@ -11,7 +11,7 @@ const port = 3000;
 const { SendEmail } = require("./emailService.js");
 const { json } = require("express");
 
-const certificate = fs.readFileSync("./A9D236016B3303B761D3E70A385DB4BD.txt");
+const certificate = fs.readFileSync("../A9D236016B3303B761D3E70A385DB4BD.txt");
 
 const httpsSever = https.createServer(
   // Provide the private and public key to the server by reading each
