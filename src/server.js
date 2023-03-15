@@ -32,7 +32,9 @@ app.use(cors());
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-httpsSever.listen(8843);
+httpsSever.listen(8443, () => {
+  console.log(`Example app listening on port 8443`);
+});
 
 // http
 //   .createServer((req, res) => {
