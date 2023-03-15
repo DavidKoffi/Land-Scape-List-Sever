@@ -1,5 +1,6 @@
 const express = require("express");
 const https = require("https");
+const http = require("http");
 const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
@@ -8,6 +9,7 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 const { SendEmail } = require("./emailService.js");
+const { json } = require("express");
 
 const httpsSever = https.createServer(
   // Provide the private and public key to the server by reading each
@@ -28,9 +30,17 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
+
+http
+  .createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.write(JSON.stringify({ ping: "Success" }));
+  })
+  .listen(port);
+console.log(`Example app listening on port ${port}`);
 
 // app.get("/", (req, res) => {
 //   res.send(
