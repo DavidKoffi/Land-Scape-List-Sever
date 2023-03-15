@@ -6,7 +6,7 @@ const multer = require("multer");
 const cors = require("cors");
 
 const app = express();
-const port = 3001;
+const port = 3000;
 const { SendEmail } = require("./emailService.js");
 
 const httpsSever = https.createServer(
@@ -28,7 +28,7 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(port, () => {
+httpsSever.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 
