@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
   service: "hotmail",
   auth: {
@@ -7,7 +7,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export function SendEmail(_recipient, _subject, _message, _attachments) {
+function SendEmail(_recipient, _subject, _message, _attachments) {
   const options = {
     from: "Jobs_in_a_jiffy_123@outlook.com",
     to: "seanyousefi5@gmail.com",
@@ -24,3 +24,5 @@ export function SendEmail(_recipient, _subject, _message, _attachments) {
     console.log(info.response);
   });
 }
+
+exports.SendEmail = SendEmail;

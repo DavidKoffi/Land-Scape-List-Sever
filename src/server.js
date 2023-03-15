@@ -1,13 +1,13 @@
-import express from "express";
-import https from "https";
-import path from "path";
-import fs from "fs";
-import multer from "multer";
-import cors from "cors";
+const express = require("express");
+const https = require("https");
+const path = require("path");
+const fs = require("fs");
+const multer = require("multer");
+const cors = require("cors");
 
 const app = express();
 const port = 3001;
-import { SendEmail } from "./emailService.js";
+const { SendEmail } = require("./emailService.js");
 
 const httpsSever = https.createServer(
   // Provide the private and public key to the server by reading each
@@ -28,7 +28,7 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-httpsSever.listen(port, () => {
+app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 
