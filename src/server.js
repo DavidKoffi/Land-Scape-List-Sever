@@ -80,7 +80,7 @@ app.get(
   }
 );
 
-app.post("/", jsonParser, (req, res) => {
+app.post("/submit-form", jsonParser, (req, res) => {
   // const arrOfName = [];
   // for (let i = 0; i < req.files?.length; i++) {
   //   uploadImage(req, res, i, arrOfName);
