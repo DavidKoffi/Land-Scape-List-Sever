@@ -36,9 +36,9 @@ app.use(cors());
 app.use(jsonParser);
 app.use(urlencodedParser);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
 httpsSever.listen(8443, () => {
   console.log(`Example app listening on port 8443`);
 });
