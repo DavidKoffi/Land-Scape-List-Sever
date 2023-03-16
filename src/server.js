@@ -69,6 +69,7 @@ const upload = multer({
 
 app.get("/", (req, res) => {
   res.send({ message: "Connected" });
+  console.log("pinged");
 });
 app.get(
   "/.well-known/pki-validation/A9D236016B3303B761D3E70A385DB4BD.txt",
