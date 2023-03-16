@@ -14,7 +14,7 @@ const { SendEmail } = require("./emailService.js");
 const jsonParser = bodyParser.json();
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-const certificate = fs.readFileSync("../A9D236016B3303B761D3E70A385DB4BD.txt");
+//const certificate = fs.readFileSync("../A9D236016B3303B761D3E70A385DB4BD.txt");
 
 const httpsSever = https.createServer(
   // Provide the private and public key to the server by reading each
@@ -110,6 +110,7 @@ app.post("/", jsonParser, (req, res) => {
     console.log("success");
     res.status(200).json({ success: true });
   }
+  console.log(res.statusCode);
   // res.status(200).contentType("text/plain").end("File uploaded!");
 });
 
