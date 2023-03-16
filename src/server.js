@@ -90,6 +90,7 @@ app.post("/", jsonParser, (req, res) => {
   // arrOfName.forEach((value) => {
   //   attachments.push({ path: value });
   // });
+  console.log("Got form request");
   let data = req.body;
   console.log(req.body);
 
